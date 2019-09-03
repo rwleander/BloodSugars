@@ -44,7 +44,7 @@ namespace BloodSugars
             try
             {
                 port = new SerialPort(commPort);
-                port.ReadTimeout = 5000;
+                port.ReadTimeout = 50;
                 port.Open();
             }
             catch
@@ -52,9 +52,28 @@ namespace BloodSugars
                 throw;
             }
 
+            //  wait until first line was read 
+                        
+            while ((buff.Length > 0) && (n < 5000))
+            {
+                try
+                {
+                    buff = port.ReadLine();
+                }
+                catch  
+                {
+                    n++;
+                }
+            }
+
+            if (n >= 5000)
+            {
+                throw new Exception("Cannot read meter - process timed out");
+            }
 
             //  load the blood sugars from the meter
 
+            port.ReadTimeout = 5000;
             try
             {
                 while (eof == false)
@@ -84,7 +103,7 @@ namespace BloodSugars
             }
 
             return sugarList.Count;
-        }
+            }
 
         //------------------
         //   private methods

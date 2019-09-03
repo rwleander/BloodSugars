@@ -50,8 +50,8 @@
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(600, 100);
             this.lblInstructions.TabIndex = 1;
-            this.lblInstructions.Text = "Connect the glucometer to the computer, press the glucometer\'s \'Memory\' key, then" +
-    " click the \'Import\' button below.";
+            this.lblInstructions.Text = "connect the glucometer to the USB cable, click the \'Import\' button below, then pr" +
+    "ess the \'Memory\' button on the glucometer.";
             // 
             // btnImport
             // 
