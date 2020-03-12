@@ -1,4 +1,10 @@
 ﻿//  export data to text file
+//
+//-------------------
+//   change history
+//
+//  3/12/2020 - print list in ascending order
+//
 
 using System;
 using System.Windows.Forms;
@@ -158,7 +164,9 @@ namespace BloodSugars
         {
             StreamWriter wrtr;
             DateTime lastDate = DateTime.MinValue;
+            objSugar sugar;
             int n = 0;
+            int i;
 
             //  if file exists, delete
 
@@ -185,8 +193,10 @@ namespace BloodSugars
 
             //  write the report
 
-            foreach (objSugar sugar in sugarList.sugarList)
+            i = sugarList.Count - 1;
+            while (i >= 0)
             {
+                sugar = sugarList.sugarList[i];
                 if ((sugar.Time >= tmpStartDate) && (sugar.Time <= tmpEndDate))
                 {
 
@@ -215,10 +225,11 @@ namespace BloodSugars
 
                     wrtr.WriteLine();
 
-                    n++;
+                    n++;                    
                 }
 
                 lastDate = sugar.Time;
+                i--;
             }
 
             //  close the file

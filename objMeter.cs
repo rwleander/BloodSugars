@@ -39,6 +39,13 @@ namespace BloodSugars
 
             sugarList.Clear();
 
+            //  locate the com port
+
+            //commPort = findCommPort();
+            //if (commPort < 0)
+            //{               throw new Exception("Cannot locate comm port");
+            //}
+
             //  open the serial port
 
             try
@@ -145,6 +152,13 @@ namespace BloodSugars
             }
 
             sugarList.Add(sugar);
+        }
+
+        //  locate the comm port
+
+        private int findCommPort()
+        {
+            return -1;
         }
 
     }

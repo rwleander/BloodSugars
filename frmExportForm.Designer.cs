@@ -157,7 +157,8 @@
             // dlgFileSave
             // 
             this.dlgFileSave.DefaultExt = "txt";
-            this.dlgFileSave.Filter = "Text files|.txt|All files|.*";
+            this.dlgFileSave.FileName = "sugars.txt";
+            this.dlgFileSave.Filter = "Text files|*.txt|All files|*.*";
             this.dlgFileSave.Title = "Export";
             // 
             // frmExportForm
