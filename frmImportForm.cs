@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace BloodSugars
 {
@@ -11,11 +12,19 @@ namespace BloodSugars
             InitializeComponent();
         }
 
-        //  on load, do nothing
+        //  on load, set up comm port list
 
         private void ImportForm_Load(object sender, EventArgs e)
         {
+            int n;
 
+            cbCommPort.Items.Clear();
+            for (n = 5; n < 13; n++)
+            {
+                cbCommPort.Items.Add("com" + n.ToString());
+            }
+
+            cbCommPort.Text = ConfigurationManager.AppSettings["CommPort"];
         }
 
         //  import data
@@ -35,12 +44,19 @@ namespace BloodSugars
             DialogResult = DialogResult.Cancel;
         }
 
+        private void frmImportForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            ConfigurationManager.AppSettings["CommPort"] = cbCommPort.Text;
+            config.Save();
+        }
+
         //-------------------------
         //   private methods
 
         private bool LoadData()
         {
-            objMeter meter = new objMeter();
+            objMeter meter = new objMeter(cbCommPort.Text);
             objSugar sugar;
             int readCount, writeCount;
 
@@ -88,5 +104,5 @@ namespace BloodSugars
             return true;
         }
 
-    }
+    }       
 }

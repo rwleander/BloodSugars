@@ -32,12 +32,14 @@
             this.lblInstructions = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblCommPort = new System.Windows.Forms.Label();
+            this.cbCommPort = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(200, 40);
+            this.lblTitle.Location = new System.Drawing.Point(200, 39);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(400, 25);
             this.lblTitle.TabIndex = 0;
@@ -58,7 +60,7 @@
             this.btnImport.Location = new System.Drawing.Point(500, 250);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 2;
+            this.btnImport.TabIndex = 4;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -68,16 +70,37 @@
             this.btnCancel.Location = new System.Drawing.Point(650, 250);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblCommPort
+            // 
+            this.lblCommPort.Location = new System.Drawing.Point(25, 200);
+            this.lblCommPort.Name = "lblCommPort";
+            this.lblCommPort.Size = new System.Drawing.Size(75, 21);
+            this.lblCommPort.TabIndex = 2;
+            this.lblCommPort.Text = "COM Port:";
+            this.lblCommPort.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cbCommPort
+            // 
+            this.cbCommPort.AccessibleName = "Comm Port";
+            this.cbCommPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCommPort.FormattingEnabled = true;
+            this.cbCommPort.Location = new System.Drawing.Point(110, 200);
+            this.cbCommPort.Name = "cbCommPort";
+            this.cbCommPort.Size = new System.Drawing.Size(100, 21);
+            this.cbCommPort.TabIndex = 3;
             // 
             // frmImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 311);
+            this.Controls.Add(this.cbCommPort);
+            this.Controls.Add(this.lblCommPort);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.lblInstructions);
@@ -85,6 +108,7 @@
             this.Name = "frmImportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Import Blood Sugars";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmImportForm_FormClosing);
             this.Load += new System.EventHandler(this.ImportForm_Load);
             this.ResumeLayout(false);
 
@@ -96,5 +120,7 @@
         private System.Windows.Forms.Label lblInstructions;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblCommPort;
+        private System.Windows.Forms.ComboBox cbCommPort;
     }
 }

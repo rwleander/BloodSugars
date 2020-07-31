@@ -26,6 +26,11 @@ namespace BloodSugars
             commPort = ConfigurationManager.AppSettings["CommPort"];
         }
 
+        public objMeter(String port)
+        {
+            commPort = port;
+        }
+
         //  read the meter and fill the list
 
         public int Load()
