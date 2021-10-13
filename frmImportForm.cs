@@ -1,4 +1,11 @@
-﻿using System;
+﻿//  import glucometer data
+//
+//   program change history
+//
+//  10/13/2021 - increase range of com ports to 14
+//
+
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Configuration;
@@ -19,7 +26,7 @@ namespace BloodSugars
             int n;
 
             cbCommPort.Items.Clear();
-            for (n = 5; n < 13; n++)
+            for (n = 1; n < 15; n++)
             {
                 cbCommPort.Items.Add("com" + n.ToString());
             }
@@ -104,5 +111,5 @@ namespace BloodSugars
             return true;
         }
 
-    }       
+    }
 }

@@ -30,7 +30,6 @@ namespace BloodSugars
 
         //  constructor
 
-
         public frmExportForm()
         {
             InitializeComponent();
@@ -225,7 +224,7 @@ namespace BloodSugars
 
                     wrtr.WriteLine();
 
-                    n++;                    
+                    n++;
                 }
 
                 lastDate = sugar.Time;

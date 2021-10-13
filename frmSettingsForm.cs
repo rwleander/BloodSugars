@@ -1,4 +1,9 @@
 ﻿//  SettingsForm.cs - settings form
+//   
+//   program change history
+//
+//  10/13/2021 - increase com port range to 14
+//
 
 using System;
 using System.Windows.Forms;
@@ -22,7 +27,7 @@ namespace BloodSugars
 
             cbPort.Items.Clear();
             cbPort.Items.Add("");
-            for (int i = 1; i < 9; i++)
+            for (int i = 1; i < 15; i++)
             {
                 cbPort.Items.Add("com" + i.ToString());
             }

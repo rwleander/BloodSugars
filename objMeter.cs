@@ -65,14 +65,14 @@ namespace BloodSugars
             }
 
             //  wait until first line was read 
-                        
+
             while ((buff.Length > 0) && (n < 5000))
             {
                 try
                 {
                     buff = port.ReadLine();
                 }
-                catch  
+                catch
                 {
                     n++;
                 }
@@ -115,7 +115,7 @@ namespace BloodSugars
             }
 
             return sugarList.Count;
-            }
+        }
 
         //------------------
         //   private methods
