@@ -1,7 +1,7 @@
 ﻿
 namespace BloodSugars
 {
-    partial class frmStats
+    partial class frmStatsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -95,6 +95,7 @@ namespace BloodSugars
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(575, 60);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 24);
@@ -115,10 +116,11 @@ namespace BloodSugars
             this.lvData.UseCompatibleStateImageBehavior = false;
             this.lvData.View = System.Windows.Forms.View.Details;
             // 
-            // frmStats
+            // frmStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.lvData);
             this.Controls.Add(this.btnClose);
@@ -128,7 +130,7 @@ namespace BloodSugars
             this.Controls.Add(this.txtStart);
             this.Controls.Add(this.lblStart);
             this.Controls.Add(this.lblTitle);
-            this.Name = "frmStats";
+            this.Name = "frmStatsForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Statistics";

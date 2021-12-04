@@ -20,6 +20,20 @@ namespace BloodSugars
         public int avgBedtime = 0;
         public int avgNight = 0;
 
+        public const int LO = 80;
+        public int loBreakfast = 0;
+        public int loLunch = 0;
+        public int loSupper = 0;
+        public int loBedtime = 0;
+        public int loNight = 0;
+
+        public const int HI = 200;
+        public int hiBreakfast = 0;
+        public int hiLunch = 0;
+        public int hiSupper = 0;
+        public int hiBedtime = 0;
+        public int hiNight = 0;
+
         //  calculate stats
 
         public void calc(objSugarList lst, DateTime start, DateTime end)
@@ -42,6 +56,18 @@ namespace BloodSugars
             avgBedtime = 0;
             avgNight = 0;
 
+            loBreakfast = 0;
+            loLunch = 0;
+            loSupper = 0;
+            loBedtime = 0;
+            loNight = 0;
+
+            hiBreakfast = 0;
+            hiLunch = 0;
+            hiSupper = 0;
+            hiBedtime = 0;
+            hiNight = 0;
+
             foreach (objSugar itm in lst.sugarList)
             {
 
@@ -55,6 +81,8 @@ namespace BloodSugars
                         case 9:
                             nBreakfast++;
                             sumBreakfast += itm.Sugar;
+                            if (itm.Sugar <= LO) loBreakfast++;
+                            if (itm.Sugar >= HI) hiBreakfast++;
                             break;
                         case 10:
                         case 11:
@@ -63,6 +91,8 @@ namespace BloodSugars
                         case 14:
                             nLunch++;
                             sumLunch += itm.Sugar;
+                            if (itm.Sugar <= LO) loLunch++;
+                            if (itm.Sugar >= HI) hiLunch++;
                             break;
                         case 15:
                         case 16:
@@ -70,6 +100,8 @@ namespace BloodSugars
                         case 18:
                             nSupper++;
                             sumSupper += itm.Sugar;
+                            if (itm.Sugar <= LO) loSupper++;
+                            if (itm.Sugar >= HI) hiSupper++;
                             break;
                         case 19:
                         case 20:
@@ -77,10 +109,14 @@ namespace BloodSugars
                         case 22:
                             nBedtime++;
                             sumBedtime += itm.Sugar;
+                            if (itm.Sugar <= LO) loBedtime++;
+                            if (itm.Sugar >= HI) hiBedtime++;
                             break;
                         default:
                             nNight++;
                             sumNight += itm.Sugar;
+                            if (itm.Sugar <= LO) loNight++;
+                            if (itm.Sugar >= HI) hiNight++;
                             break;
                     }
                 }

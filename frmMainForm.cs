@@ -215,7 +215,7 @@ namespace BloodSugars
 
         private void btnStats_Click(object sender, EventArgs e)
         {
-            frmStats frm = new frmStats() ;
+            frmStatsForm frm = new frmStatsForm() ;
             frm.sugarList = sugarList;
             frm.start = DateTime.Today.AddMonths(-1);
             frm.end = DateTime.Today;

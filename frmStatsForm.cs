@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace BloodSugars
 {
-    public partial class frmStats : Form
+    public partial class frmStatsForm : Form
     {
 
         //  public properties
@@ -17,7 +17,7 @@ namespace BloodSugars
 
         //  constructor
 
-        public frmStats()
+        public frmStatsForm()
         {
             InitializeComponent();
         }
@@ -32,6 +32,8 @@ namespace BloodSugars
             lvData.Columns.Add("Time", 150, HorizontalAlignment.Left);
             lvData.Columns.Add("Count", 100, HorizontalAlignment.Center);
             lvData.Columns.Add("Average", 150, HorizontalAlignment.Right);
+            lvData.Columns.Add("Lows", 100, HorizontalAlignment.Center);
+            lvData.Columns.Add("Highs", 100, HorizontalAlignment.Center);
 
             txtStart.Focus();
         }
@@ -117,6 +119,8 @@ namespace BloodSugars
                 lvItem = new ListViewItem("Breakfast");
                 lvItem.SubItems.Add(stats.nBreakfast.ToString());
                 lvItem.SubItems.Add(stats.avgBreakfast.ToString());
+                lvItem.SubItems.Add(stats.loBreakfast.ToString ());
+                lvItem.SubItems.Add(stats.hiBreakfast.ToString ());
                 lvData.Items.Add(lvItem);
             }
 
@@ -125,6 +129,8 @@ namespace BloodSugars
                 lvItem = new ListViewItem("Lunch");
                 lvItem.SubItems.Add(stats.nLunch.ToString());
                 lvItem.SubItems.Add(stats.avgLunch.ToString());
+                lvItem.SubItems.Add(stats.loLunch.ToString ());
+                lvItem.SubItems.Add(stats.hiLunch.ToString ());
                 lvData.Items.Add(lvItem);
             }
 
@@ -133,6 +139,8 @@ namespace BloodSugars
                 lvItem = new ListViewItem("Supper");
                 lvItem.SubItems.Add(stats.nSupper.ToString());
                 lvItem.SubItems.Add(stats.avgSupper.ToString());
+                lvItem.SubItems.Add(stats.loSupper.ToString ());
+                lvItem.SubItems.Add(stats.hiSupper.ToString ());
                 lvData.Items.Add(lvItem);
             }
 
@@ -141,6 +149,8 @@ namespace BloodSugars
                 lvItem = new ListViewItem("Bed time");
                 lvItem.SubItems.Add(stats.nBedtime.ToString());
                 lvItem.SubItems.Add(stats.avgBedtime.ToString());
+                lvItem.SubItems.Add(stats.loBedtime.ToString ());
+                lvItem.SubItems.Add(stats.hiBedtime.ToString ());
                 lvData.Items.Add(lvItem);
             }
 
@@ -148,6 +158,8 @@ namespace BloodSugars
             {
                 lvItem = new ListViewItem("Night");
                 lvItem.SubItems.Add(stats.nNight.ToString());
+                lvItem.SubItems.Add(stats.loNight.ToString ());
+                lvItem.SubItems.Add(stats.hiNight.ToString ());
                 lvItem.SubItems.Add(stats.avgNight.ToString());
             }
 
@@ -157,7 +169,6 @@ namespace BloodSugars
             }
 
         }
-
 
     }
 }
