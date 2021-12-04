@@ -38,6 +38,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Splitter1)).BeginInit();
             this.Splitter1.Panel1.SuspendLayout();
             this.Splitter1.Panel2.SuspendLayout();
@@ -138,29 +139,40 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(500, 0);
+            this.btnSettings.Location = new System.Drawing.Point(600, 0);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(100, 35);
-            this.btnSettings.TabIndex = 6;
+            this.btnSettings.TabIndex = 7;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(600, 0);
+            this.btnClose.Location = new System.Drawing.Point(700, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 35);
-            this.btnClose.TabIndex = 7;
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnStats
+            // 
+            this.btnStats.Location = new System.Drawing.Point(500, 0);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(100, 35);
+            this.btnStats.TabIndex = 6;
+            this.btnStats.Text = "Statistics";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnDelete);
@@ -194,6 +206,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnStats;
     }
 }
 

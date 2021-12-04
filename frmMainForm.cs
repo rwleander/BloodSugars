@@ -70,16 +70,16 @@ namespace BloodSugars
 
             //  calculate dimensions
 
-            bx = w / 7;
+            bx = w / 8;
             by = 1;
             bw = bx - 2;
             bh = btnClose.Height;
 
             sx = 1;
-            sy = bx + by + 2;
+            sy = by + bh + 2;
             sw = w - sx - 1;
             sh = h - sy - 1;
-
+                        
             //  resize controls
 
             SuspendLayout();
@@ -99,10 +99,13 @@ namespace BloodSugars
             btnDelete.Location = new Point(bx * 4 + 1, by);
             btnDelete.Size = new Size(bw, bh);
 
-            btnSettings.Location = new Point(bx * 5 + 1, by);
+            btnStats.Location = new Point(bx * 5 + 1, by);
+            btnStats.Size = new Size(bw, bh);
+
+            btnSettings.Location = new Point(bx * 6 + 1, by);
             btnSettings.Size = new Size(bw, bh);
 
-            btnClose.Location = new Point(bx * 6 + 1, by);
+            btnClose.Location = new Point(bx * 7 + 1, by);
             btnClose.Size = new Size(bw, bh);
 
             Splitter1.Location = new Point(sx, sy);
@@ -206,6 +209,17 @@ namespace BloodSugars
             {
                 DeleteData();
             }
+        }
+
+        //  show statistics
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            frmStats frm = new frmStats() ;
+            frm.sugarList = sugarList;
+            frm.start = DateTime.Today.AddMonths(-1);
+            frm.end = DateTime.Today;
+            frm.ShowDialog();
         }
 
         //  open settings form
@@ -359,6 +373,7 @@ namespace BloodSugars
                 return "";
             }
         }
+
 
     }
 }

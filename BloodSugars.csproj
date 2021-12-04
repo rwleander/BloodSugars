@@ -59,6 +59,12 @@
     <Compile Include="frmImportForm.Designer.cs">
       <DependentUpon>frmImportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStats.Designer.cs">
+      <DependentUpon>frmStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSugarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,7 @@
       <DependentUpon>frmSugarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="objMeter.cs" />
+    <Compile Include="objStats.cs" />
     <Compile Include="objSugarList.cs" />
     <Compile Include="frmMainForm.cs">
       <SubType>Form</SubType>
@@ -91,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStats.resx">
+      <DependentUpon>frmStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSugarForm.resx">
       <DependentUpon>frmSugarForm.cs</DependentUpon>
