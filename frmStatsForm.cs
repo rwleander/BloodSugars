@@ -158,10 +158,24 @@ namespace BloodSugars
             {
                 lvItem = new ListViewItem("Night");
                 lvItem.SubItems.Add(stats.nNight.ToString());
+                lvItem.SubItems.Add(stats.avgNight.ToString());
                 lvItem.SubItems.Add(stats.loNight.ToString ());
                 lvItem.SubItems.Add(stats.hiNight.ToString ());
                 lvItem.SubItems.Add(stats.avgNight.ToString());
+                lvData.Items.Add(lvItem);
             }
+
+            if (stats.nNight > 0)
+            {
+                lvItem = new ListViewItem("Overall");
+                lvItem.SubItems.Add(stats.nAll.ToString());
+                lvItem.SubItems.Add(stats.avgAll.ToString());
+                lvItem.SubItems.Add(stats.loAll.ToString());
+                lvItem.SubItems.Add(stats.hiAll.ToString());
+                lvItem.SubItems.Add(stats.avgNight.ToString());
+                lvData.Items.Add(lvItem);
+            }
+
 
             if (lvData.Items.Count == 0)
             {
