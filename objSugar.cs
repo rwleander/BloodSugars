@@ -45,9 +45,14 @@ namespace BloodSugars
         public DataSet GetAll()
         {
 
+            //  determine date
+
+            int yy = DateTime.Now.Year - 1;
+            String dateString = "1/1/" + yy.ToString();
+
             //  create the search command
 
-            OleDbCommand cmd = new OleDbCommand("Select * from Sugars Order by Time desc;");
+            OleDbCommand cmd = new OleDbCommand("Select * from Sugars WHERE time >= #" + dateString + "# Order by Time desc;");
 
             //  get the data
 
